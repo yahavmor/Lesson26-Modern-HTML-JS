@@ -6,6 +6,7 @@
     margin:1em 0;
     background-color: aqua;
     border-radius: 10px;
+    padding: 0.5em;
 }
 .nav-bar a{
     color: black;

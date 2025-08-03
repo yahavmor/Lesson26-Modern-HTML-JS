@@ -9,13 +9,12 @@ function removeFromList(placeId){
     renderPlaces()
 }
 
-function addPlace(name, lat, lng, zoom) {
+function addPlace(name, lat, lng) {
         const place = {
         id: makeId(),
         name,
         lat,
         lng,
-        zoom
     }
     gPlaces.push(place)
     setToLocalStorage('places', gPlaces)
@@ -23,7 +22,7 @@ function addPlace(name, lat, lng, zoom) {
 
 function getCSV() {
     const csvContent = gPlaces.map(place => {
-        return `${place.name},${place.lat},${place.lng},${place.zoom}`
+        return `${place.name},${place.lat},${place.lng}`
     }).join('\n')
     
     const blob = new Blob([csvContent], { type: 'text/csv' })
@@ -47,4 +46,7 @@ map: gMap,
 title: place.name
 })
 })
+}
+function centerUserLocation(){
+    gMap.setCenter({ lat: userLocation.lat, lng: userLocation.lng})
 }

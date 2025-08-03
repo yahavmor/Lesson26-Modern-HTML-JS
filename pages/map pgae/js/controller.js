@@ -1,12 +1,17 @@
 'use strict';
 var gMap
 
+const userLocation = {
+    lat:  38.8977,
+    lng: -77.0365
+}
+ 
 const defaultLocation = {
     id: makeId(),
     name: 'Eilat',
     lat: 29.557669, 
     lng: 34.951923,
-    zoom: 12  
+    zoom: 14  
 }
 var gPlaces
 var gMarkers = []
@@ -14,10 +19,11 @@ var gMarkers = []
 
 function initMap() {
     gPlaces = JSON.parse(localStorage.getItem('places'))
-    if (!gPlaces || !gPlaces.length)gPlaces = [defaultLocation]
-        gMap = new google.maps.Map(document.getElementById("map"), {
-          zoom: 12,
-          center: { lat: defaultLocation.lat, lng: defaultLocation.lng },
+    if (!gPlaces || !gPlaces.length) gPlaces = [defaultLocation]
+        gMap = new google.maps.Map(document.getElementById("map"),
+        {
+        center: { lat: defaultLocation.lat, lng: defaultLocation.lng },
+        zoom: defaultLocation.zoom
         }); 
         renderPlaces()
 
@@ -27,8 +33,7 @@ function initMap() {
         const name = prompt('Place name?', 'Place 1')
         const lat = ev.latLng.lat()
         const lng = ev.latLng.lng()
-        const zoom = gMap.getZoom()
-        addPlace(name, lat, lng, zoom)     
+        addPlace(name, lat, lng)     
         renderPlaces()
         });
 }
@@ -36,7 +41,7 @@ function initMap() {
 function onPanToPlace(placeId) {
 const place = getPlaceById(placeId)
 gMap.setCenter({ lat: place.lat, lng: place.lng})
-gMap.setZoom(place.zoom)
+gMap.setZoom(14)
 }
 
 
@@ -53,10 +58,12 @@ function renderPlaces() {
     elPlaces.innerHTML = strHtmls
     renderMarkers()
 }
-function onAddPlace(name, lat, lng, zoom) {
-    addPlace(name, lat, lng, zoom)
+function onAddPlace(name, lat, lng) {
+    addPlace(name, lat, lng)
 
 }
 function onRemoveFromList(placeId) {
   removeFromList(placeId)
 }
+
+
