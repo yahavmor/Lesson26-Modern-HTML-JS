@@ -1,0 +1,13 @@
+.nav-bar{
+    display: grid;
+    font-size: 2em;
+    grid-auto-flow: column;
+    place-items: center;
+    margin:1em 0;
+    background-color: aqua;
+    border-radius: 10px;
+}
+.nav-bar a{
+    color: black;
+    text-decoration: none;
+}

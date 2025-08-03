@@ -1,0 +1,10 @@
+.resetPrefs{
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 1.5em;
+    color: #333333;
+    cursor: pointer;
+    border-radius: 8px;
+    padding: .5em;
+}

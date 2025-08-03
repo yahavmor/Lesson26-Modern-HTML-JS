@@ -1,0 +1,21 @@
+*{
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+
+}
+html{
+    margin: 1vw;
+
+}
+body{
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 1em;
+    background-color: lightgray;
+}
+.main-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

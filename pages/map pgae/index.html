@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>map pgae</title>
+    <link rel="stylesheet" href="style/styles.css">
+    <script src="https://kit.fontawesome.com/09f6734616.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body onload="setPrefs()">
+  <header class="header">
+    <h1 class="main-title">Place Keeper</h1>
+    <h2 class="sec-title">Find your way back to your places</h2>
+  </header>
+    <nav class="nav-bar">
+      <a href="/pages/home-app-page/index.html">Home</a> |
+      <a href="/pages/user-prefs-page/index.html">Settings</a> |
+      <a href="/pages/map pgae/index.html">Places</a> 
+    </nav>
+  <main class="main-content">
+    <div class="map-content">
+      <div id="map" class="map"></div>
+      <i class="fa-solid fa-location-crosshairs" onclick="centerUserLocation()"></i>
+    </div>
+    <section class="places-list">
+      <h4>Places</h4>
+      <ul class="places">
+
+      </ul>
+      <a href="#" download="users.css" onclick="getCSV(this)">download as CSV </a>
+    </section>
+      <button class="resetPrefs" onclick="onResetPrefs()">Reset Preference</button>
+
+  </main>
+    
+    <script src="/pages/map pgae/js/utils.js"></script>
+    <script src="/pages/map pgae/js/service.js"></script>
+    <script src="/pages/map pgae/js/controller.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFUswrot09IpiaHmKfjwtqyWvaDxWSTV0&callback=initMap"></script>
+
+  </body>
+</html>
