@@ -29,8 +29,17 @@
       <a href="#" download="users.css" onclick="getCSV(this)">download as CSV </a>
     </section>
       <button class="resetPrefs" onclick="onResetPrefs()">Reset Preference</button>
-
   </main>
+  <dialog class="add-location-modal">
+        <form onsubmit="onSaveLocation(event)" method="dialog">
+            <h4 class="dialog-header">Add your place 😊</h4>
+            <input type="text" placeholder="Enter your location name" class="dialog-input">
+            <div class="dialog-actions">
+                <button type="button" onclick="onCloseModal()">Cancel</button>
+                <button>Save</button>
+            </div>
+        </form>
+    </dialog>
     
     <script src="/pages/map pgae/js/utils.js"></script>
     <script src="/pages/map pgae/js/service.js"></script>

@@ -1,5 +1,8 @@
 'use strict';
 var gMap
+var lat
+var lng
+var name
 
 const userLocation = {
     lat:  38.8977,
@@ -30,13 +33,24 @@ function initMap() {
 
 
         gMap.addListener('click', ev => {
-        const name = prompt('Place name?', 'Place 1')
-        const lat = ev.latLng.lat()
-        const lng = ev.latLng.lng()
-        addPlace(name, lat, lng)     
-        renderPlaces()
+        const elModal = document.querySelector('.add-location-modal')
+        const elInput = elModal.querySelector('.dialog-input')
+        lat = ev.latLng.lat()
+        lng = ev.latLng.lng()
+        elInput.value = ''
+        elModal.showModal()        
         });
 }
+
+function onSaveLocation(){
+    const elModal = document.querySelector('.add-location-modal')
+    const elInput = elModal.querySelector('.dialog-input')
+    name = elInput.value
+    addPlace(name, lat, lng)     
+    renderPlaces()
+
+}
+
 
 function onPanToPlace(placeId) {
 const place = getPlaceById(placeId)
@@ -65,5 +79,8 @@ function onAddPlace(name, lat, lng) {
 function onRemoveFromList(placeId) {
   removeFromList(placeId)
 }
-
+function onCloseModal(){
+    const elModal  = document.querySelector('.add-location-modal')
+    elModal.close()
+}
 
