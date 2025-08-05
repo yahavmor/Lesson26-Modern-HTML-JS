@@ -1,0 +1,14 @@
+/* for mobile */
+@media (max-width:600px) {
+
+body {
+    display: grid;
+    grid-template-columns:  1fr;
+    margin: 0;   
+    gap: 10px;
+}
+body > * {
+    grid-column: 1;
+}
+    
+}

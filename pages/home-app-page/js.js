@@ -1,4 +1,9 @@
 'use strict';
+  
+const defaultPrefs = {
+        bgc: 'white',
+        txt: 'black'
+    }; 
 function setPrefs(){
     const userPrefs = JSON.parse(localStorage.getItem('userPrefs'));
     if (!userPrefs.bgc || !userPrefs.txt) {

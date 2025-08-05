@@ -3,22 +3,14 @@
     transition: all 0.3s ease;
 }
 body {
-    font-family: Arial, sans-serif;
-    background-color: #fffdf7;
-    margin: 0;
-    padding: 20px;
-    height: 94vh;
     display: grid;
-    place-items: center;
+    grid-template-columns:  minmax(60px,1fr) minmax(auto,1180px) minmax(60px,1fr);
+    margin: 0;   
     gap: 20px;
-    padding-top: 4em;
 }
 body > * {
-    width: 100%;
-    height: 100%;
-    margin: auto;
+    grid-column: 2;
 }   
-
 h1 {
     font-size: 4em;
     color: white;
@@ -30,7 +22,6 @@ h1 {
 }
 nav {
     display: flex;
-    width: 100%;
     justify-content: space-between;
     align-items: center;
     font-size: 2em;
@@ -47,14 +38,11 @@ nav a {
     position: absolute;
     top: 0;
     right: 0;
-    width: 300px;
-    height: auto;
     font-size: 1.5em;
-    color: #444;
+    color: #333333;
     cursor: pointer;
     border-radius: 8px;
     padding: .5em;
-    opacity: 0.8;
 }
 img{
     display: block;

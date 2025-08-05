@@ -1,5 +1,6 @@
-@import url('base.css');
+@import url('./components/reset-prefs-button.css'); 
+@import url('./components/nav-bar.css');            
 
-
-@import url('./components/nav-bar.css');
-@import url('./components/reset-prefs-button.css');
+@import url('base.css');     
+                       
+@import url('mq.css');                              

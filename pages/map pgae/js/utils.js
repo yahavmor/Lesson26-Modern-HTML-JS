@@ -1,4 +1,8 @@
 'use strict';
+const defaultPrefs = {
+        bgc: 'white',
+        txt: 'black'
+    }; 
 
 function makeId(){
   var text = "";
