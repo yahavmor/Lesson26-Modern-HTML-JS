@@ -1,4 +1,6 @@
+# Create an index.html file that redirects to pages/home-app-page/index.html
 
+redirect_html = """
 <!DOCTYPE html>
 <html>
   <head>
@@ -9,3 +11,11 @@
     <p>If you are not redirected automatically, follow this <a href="pages/home-app-page/index.html">link to the home app page</a>.</p>
   </body>
 </html>
+"""
+
+# Save the redirect HTML to index.html in the current directory
+with open("index.html", "w", encoding="utf-8") as f:
+    f.write(redirect_html)
+
+print("index.html file created successfully with redirect to pages/home-app-page/index.html")
+
